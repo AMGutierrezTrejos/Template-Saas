@@ -22,7 +22,7 @@ const Header = () => {
             isOpen ? "max-lg:opacity-100" : "max-lg:pointer-events-none"
           )}
         >
-          <div className=" max-lg:relative max-lg:flex max-lg:flex-col max-lg:min-h-screen max-lg:p-6 max-lg:overflow-hidden siderbar-before max-md:px-4">
+          <div className="max-lg:relative max-lg:flex max-lg:flex-col max-lg:min-h-screen max-lg:p-6 max-lg:overflow-hidden sidebar-before max-md:px-4">
             <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto">
               <ul className="flex max-lg:block max-lg:px-12">
                 <li className="nav-li">
@@ -30,14 +30,22 @@ const Header = () => {
                   <div className="dot" />
                   <NavLink title="pricing" />
                 </li>
+
                 <li className="nav-logo">
-                  <LinkScroll to="hero"
-                  offset={-100}>
+                  <LinkScroll
+                    to="hero"
+                    offset={-250}
+                    spy
+                    smooth
+                    className={clsx(
+                      "max-lg:hidden transition-transform duration-500 cursor-pointer"
+                    )}
+                  >
                     <img
                       src="/images/xora.svg"
-                      alt="logo"
                       width={160}
                       height={55}
+                      alt="logo"
                     />
                   </LinkScroll>
                 </li>
@@ -48,6 +56,23 @@ const Header = () => {
                 </li>
               </ul>
             </nav>
+
+            <div className="lg:hidden block absolute top-1/2 left-0 w-[960px] h-[380px] translate-x-[-290px] -translate-y-1/2 rotate-90">
+              <img
+                src="/images/bg-outlines.svg"
+                width={960}
+                height={380}
+                alt="outline"
+                className="relative z-2"
+              />
+              <img
+                src="/images/bg-outlines-fill.png"
+                width={960}
+                height={380}
+                alt="outline"
+                className="absolute inset-0 mix-blend-soft-light opacity-5"
+              />
+            </div>
           </div>
         </div>
         <button
@@ -55,11 +80,10 @@ const Header = () => {
           onClick={() => setIsOpen((prevState) => !prevState)}
         >
           <img
-            src={`/images/${isOpen ? 'close' : "magic"}.svg`}
+            src={`/images/${isOpen ? "close" : "magic"}.svg`}
             alt="magic"
             className="size-1/2 object-contain"
           />
-          
         </button>
       </div>
     </header>
