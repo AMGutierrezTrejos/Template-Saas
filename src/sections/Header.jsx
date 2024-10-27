@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link as LinkScroll } from "react-scroll";
 import clsx from "clsx";
 
 const NavLink = ({ title }) => (
-  <LinkScroll className="base-bold text-p4 uppercase transtion-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5">
+  <LinkScroll
+    to={title}
+    className="base-bold text-p4 uppercase transtion-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5"
+  >
     {title}
   </LinkScroll>
 );
