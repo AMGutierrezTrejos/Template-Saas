@@ -1,5 +1,5 @@
 import React from "react";
-import {  Element } from "react-scroll";
+import { Element } from "react-scroll";
 import { features } from "../constants/index.jsx";
 import Button from "../components/Button";
 
@@ -33,6 +33,8 @@ const Features = () => {
                 <Button icon={button.icon}>{button.title}</Button>
               </div>
             ))}
+
+            <ul className="relative flex justify-around"></ul>
           </div>
         </div>
       </Element>

@@ -96,6 +96,10 @@
     @apply text-[12px] font-semibold leading-[18px] tracking-[0.03em];
   }
 
+  .no-copy {
+    user-select: none;
+  }
+
   /* END of Typography */
   /* START of Gradients */
   .g1 {
